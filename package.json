@@ -10,7 +10,7 @@
     "lint:fix": "turbo lint:fix",
     "test:unit": "turbo test:unit",
     "test:e2e": "turbo test:e2e",
-    "build": "turbo build",
+    "build": "turbo lint:fix test:unit test:e2e build",
     "dev": "turbo dev",
     "postinstall": "lefthook install"
   },
