@@ -10,6 +10,14 @@
     "build": {
       "dependsOn": ["^build"]
     },
+    "build:storybook": {
+      "inputs": [
+        "src/**/*.stories.ts",
+        "src/**/*.mdx",
+        "stories/**/*.ts",
+        "stories/**/*.mdx"
+      ]
+    },
     "test:unit": {
       "inputs": [
         "src/**/*.ts",

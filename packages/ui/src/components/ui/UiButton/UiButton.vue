@@ -27,6 +27,6 @@ const sizeToClasses = new Map([
     class="transition rounded-md"
     :class="[colorToClasses.get(color), sizeToClasses.get(size)]"
   >
-    <slot />
+    <slot>Button</slot>
   </button>
 </template>

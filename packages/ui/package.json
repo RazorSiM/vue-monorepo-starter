@@ -25,12 +25,14 @@
     "test:unit:dev": "vitest --environment jsdom --root src/",
     "test:component": "cypress run --component",
     "test:component:dev": "cypress open --component",
-    "build-only": "vite build",
+    "build-only": "vite build --config vite-library.config.ts",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "prettier:check": "prettier --check . --ignore-path .prettierignore",
-    "prettier:write": "prettier --write . --ignore-path .prettierignore"
+    "prettier:write": "prettier --write . --ignore-path .prettierignore",
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build:storybook": "storybook build"
   },
   "dependencies": {
     "eslint-config-vue": "workspace:*"
