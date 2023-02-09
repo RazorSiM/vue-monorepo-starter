@@ -1,0 +1,10 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress", "node"],
+    "jsx": "preserve"
+  },
+  "include": ["cypress.config.*", "./cypress/**/*.ts", "./**/*.cy.ts"]
+}
