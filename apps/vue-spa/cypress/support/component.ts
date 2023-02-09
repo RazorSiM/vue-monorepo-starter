@@ -16,6 +16,8 @@
 // Import commands.js using ES2015 syntax:
 import "./commands";
 import "uno.css";
+// having problems with importing the reset css from its node_modules.The hack is to have a static file in the project folder and load it instead.
+// import "@unocss/reset/tailwind.css";
 import "./reset.css";
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
