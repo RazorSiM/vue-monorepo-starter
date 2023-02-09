@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import UiButton from "./components/ui/UiButton.vue";
+import UiButton from "./components/ui/UiButton/UiButton.vue";
 </script>
 <template>
   <div
