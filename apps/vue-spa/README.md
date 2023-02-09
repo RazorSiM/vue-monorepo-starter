@@ -8,7 +8,7 @@
 [![ESLint](https://img.shields.io/badge/-ESLint-4b32c3?style=flat-square&logo=eslint&logoColor=white)](https://eslint.org/)
 [![Antfu](https://img.shields.io/badge/-Antfu-42b883?style=flat-square&logo=vue.js&logoColor=white)](https://github.com/antfu/eslint-config)
 
-# Vue 3 Starter
+# Simple Vue SPA
 
 This is my personal take on a Vite + Vue 3 template. If you want to try it:
 
