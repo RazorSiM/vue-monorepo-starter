@@ -1,6 +1,6 @@
 # ui
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a simple UI Library based on Vue. It has component and unit tests in place.
 
 ## Recommended IDE Setup
 
@@ -21,12 +21,6 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
-
-```sh
-pnpm install
-```
-
 ### Compile and Hot-Reload for Development
 
 ```sh
@@ -45,24 +39,23 @@ pnpm build
 pnpm test:unit
 ```
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+### Run Component Tests with [Cypress](https://www.cypress.io/)
 
 ```sh
-pnpm test:e2e:dev
+pnpm test:component:dev
 ```
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-pnpm build
-pnpm test:e2e
-```
+This runs the component tests.
+It will open a browser window (or electron app) and run the tests.
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-pnpm lint
+pnpm lint:fix
+```
+
+### Format with [Prettier](https://prettier.io/)
+
+```sh
+pnpm lint:fix
 ```
