@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useGlobalStore } from "@/stores/global";
+import { useNumberFormatter } from "vue-utils-lib";
 import { UiButton } from "ui";
 interface Badge {
   img: string;
@@ -7,6 +8,18 @@ interface Badge {
   title: string;
 }
 const globalStore = useGlobalStore();
+
+const preferredLanguages = usePreferredLanguages();
+const language = ref(preferredLanguages.value[0]);
+const number = ref(123456789);
+const options = ref({
+  style: "currency",
+  currency: "USD",
+  currencyDisplay: "symbol",
+  maximumFractionDigits: 2,
+  minimumFractionDigits: 2,
+});
+const { formattedNumber } = useNumberFormatter(number, language, options);
 
 const counterColor = computed(() =>
   globalStore.count > 0 ? "text-indigo-400" : "text-pink-300"
@@ -310,19 +323,49 @@ pnpm run test:e2e
     </h3>
     <p><code>pnpm run lint</code></p>
   </div>
-  <div class="mb-5">
-    Example of how you can use Pinia as your store manager:
+  <hr class="border mb-10" />
+  <div class="mb-10">
+    <h3 class="mb-5 text-2xl">
+      Example of how you can use utilities imported from the monorepo libraries:
+    </h3>
+    <label>
+      <p>Language:</p>
+      <select
+        v-model="language"
+        class="bg-light-800 dark:bg-gray-800 px-3 py-1 rounded-lg"
+      >
+        <option v-for="lang in preferredLanguages" :key="lang">
+          {{ lang }}
+        </option>
+      </select>
+    </label>
+    <label>
+      <p>Number:</p>
+      <input
+        v-model.number="number"
+        type="number"
+        class="bg-light-800 dark:bg-gray-800 px-3 py-1 rounded-lg"
+      />
+    </label>
+    <p>Formatted Number: {{ formattedNumber }}</p>
   </div>
-  <div class="mb-2">
-    Counter value is
-    <span class="font-bold" :class="counterColor">{{ globalStore.count }}</span>
-  </div>
-  <div class="flex space-x-5">
-    <UiButton color="warning" @click="globalStore.decreaseCounter()"
-      >Decrease Counter by 1</UiButton
-    >
-    <UiButton color="primary" @click="globalStore.incrementCounter()"
-      >Increase Counter by 1</UiButton
-    >
+  <div>
+    <h3 class="mb-5 text-2xl">
+      Example of how you can use Pinia as your store manager:
+    </h3>
+    <div class="mb-2">
+      Counter value is
+      <span class="font-bold" :class="counterColor">{{
+        globalStore.count
+      }}</span>
+    </div>
+    <div class="flex space-x-5">
+      <UiButton color="warning" @click="globalStore.decreaseCounter()"
+        >Decrease Counter by 1</UiButton
+      >
+      <UiButton color="primary" @click="globalStore.incrementCounter()"
+        >Increase Counter by 1</UiButton
+      >
+    </div>
   </div>
 </template>

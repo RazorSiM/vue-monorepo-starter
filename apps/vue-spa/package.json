@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "eslint-config-vue": "workspace:*",
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "vue-utils-lib": "workspace:*"
   }
 }
