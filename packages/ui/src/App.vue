@@ -3,9 +3,9 @@ import UiButton from "./components/ui/UiButton/UiButton.vue";
 </script>
 <template>
   <div
-    class="w-full dark:bg-dark-900 bg-light-300 h-screen flex items-center justify-center"
+    class="w-full dark:bg-dark-900 bg-light-300 h-screen flex items-center justify-center flex-col gap-5"
   >
     <div class="text-6xl font-bold">Test</div>
-    <UiButton>Cia</UiButton>
+    <UiButton>Button</UiButton>
   </div>
 </template>
