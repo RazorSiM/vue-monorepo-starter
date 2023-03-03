@@ -1,6 +1,6 @@
 {
   "name": "vue-utils-lib",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "main": "./dist/vue-utils-lib.umd.cjs",
   "module": "./dist/vue-utils-lib.js",
