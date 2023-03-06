@@ -14,6 +14,10 @@ const meta: Meta<typeof UiButton> = {
       control: "select",
       options: ["sm", "md", "lg"],
     },
+    elevation: {
+      control: "select",
+      options: ["sm", "md", "lg"],
+    },
   },
 };
 export default meta;
@@ -31,6 +35,7 @@ export const Primary: Story = {
   args: {
     color: "primary",
     size: "md",
+    elevation: "sm",
   },
 };
 

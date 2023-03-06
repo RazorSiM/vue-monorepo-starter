@@ -2,10 +2,12 @@
 export interface ButtonProps {
   color?: "primary" | "secondary" | "danger" | "success" | "warning";
   size?: "sm" | "md" | "lg";
+  elevation?: "sm" | "md" | "lg";
 }
 withDefaults(defineProps<ButtonProps>(), {
   color: "primary",
   size: "md",
+  elevation: "sm",
 });
 
 const colorToClasses = new Map([
@@ -20,12 +22,21 @@ const sizeToClasses = new Map([
   ["md", "px-3 py-2 text-base"],
   ["lg", "px-4 py-3 text-lg"],
 ]);
+const elevationToClasses = new Map([
+  ["sm", "shadow-sm"],
+  ["md", "shadow-md"],
+  ["lg", "shadow-lg"],
+]);
 </script>
 
 <template>
   <button
     class="transition rounded-md"
-    :class="[colorToClasses.get(color), sizeToClasses.get(size)]"
+    :class="[
+      colorToClasses.get(color),
+      sizeToClasses.get(size),
+      elevationToClasses.get(elevation),
+    ]"
   >
     <slot>Button</slot>
   </button>
