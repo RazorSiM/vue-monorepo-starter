@@ -1,5 +1,14 @@
 # vue-spa
 
+## 1.0.1
+
+### Patch Changes
+
+- 410c154: Update packages
+- Updated dependencies [410c154]
+  - @vue-monorepo/ui@1.0.1
+  - @vue-monorepo/vue-utils-lib@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,5 +1,11 @@
 # vue-utils-lib
 
+## 1.0.1
+
+### Patch Changes
+
+- 410c154: Update packages
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useGlobalStore } from "@/stores/global";
-import { useNumberFormatter } from "vue-utils-lib";
-import { UiButton } from "ui";
+import { useNumberFormatter } from "@vue-monorepo/vue-utils-lib";
+import { UiButton } from "@vue-monorepo/ui";
 interface Badge {
   img: string;
   url: string;

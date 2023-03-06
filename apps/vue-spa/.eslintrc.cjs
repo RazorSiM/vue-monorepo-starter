@@ -1,5 +1,5 @@
 /* eslint-env node */
 module.exports = {
   root: true,
-  extends: ["eslint-config-vue", "./.eslintrc-auto-import.json"],
+  extends: ["@vue-monorepo/eslint-config-vue", "./.eslintrc-auto-import.json"],
 };
