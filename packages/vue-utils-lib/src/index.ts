@@ -1,1 +1,2 @@
-export { useNumberFormatter } from "./formatters/useNumberFormatter";
+import { useNumberFormatter } from "./formatters/useNumberFormatter";
+export { useNumberFormatter };

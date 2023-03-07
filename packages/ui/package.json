@@ -1,9 +1,9 @@
 {
   "name": "@vue-monorepo/ui",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "main": "./dist/ui.umd.js",
   "module": "./dist/ui.mjs",
-  "types": "./dist/src/main.d.ts",
+  "types": "./dist/ui.d.ts",
   "files": [
     "dist"
   ],

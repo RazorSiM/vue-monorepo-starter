@@ -1,5 +1,22 @@
 # vue-spa
 
+## 1.0.3
+
+### Patch Changes
+
+- Fix types export
+- Updated dependencies
+  - @vue-monorepo/vue-utils-lib@1.0.3
+  - @vue-monorepo/ui@1.0.3
+
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies
+  - @vue-monorepo/vue-utils-lib@1.0.2
+  - @vue-monorepo/ui@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes

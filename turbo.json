@@ -10,6 +10,7 @@
     "build": {
       "dependsOn": ["^build"]
     },
+    "build:docs": {},
     "build:storybook": {
       "inputs": [
         "src/**/*.stories.ts",
