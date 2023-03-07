@@ -1,6 +1,6 @@
 {
   "name": "@vue-monorepo/vue-utils-lib",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "type": "module",
   "main": "./dist/vue-utils-lib.umd.cjs",
   "module": "./dist/vue-utils-lib.js",
@@ -15,9 +15,9 @@
   },
   "types": "./dist/vue-utils-lib.d.ts",
   "scripts": {
-    "docs:dev": "vitepress dev src",
-    "docs:build": "vitepress build src",
-    "docs:preview": "vitepress preview src",
+    "dev": "vitepress dev src",
+    "build:docs": "vitepress build src",
+    "preview:docs": "vitepress preview src",
     "test:unit": "vitest run --environment jsdom --root src/",
     "test:unit:dev": "vitest --environment jsdom --root src/",
     "build": "run-p type-check build-only",

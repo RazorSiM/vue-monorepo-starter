@@ -14,6 +14,7 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       skipDiagnostics: true,
+      clearPureImport: true,
       cleanVueFileName: true,
     }),
   ],
@@ -21,7 +22,7 @@ export default defineConfig({
     cssCodeSplit: true,
     lib: {
       // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname, "src/components/index.ts"),
+      entry: resolve(__dirname, "src/index.ts"),
       name: "Ui",
       // the proper extensions will be added
       fileName: "ui",
