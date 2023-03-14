@@ -16,9 +16,6 @@
   "types": "./dist/vue-utils-lib.d.ts",
   "scripts": {
     "dev": "vite build --config vite-library.config.ts --watch",
-    "dev:docs": "vitepress dev src",
-    "build:docs": "vitepress build src",
-    "preview:docs": "vitepress preview src",
     "test:unit": "vitest run --environment jsdom --root src/",
     "test:unit:dev": "vitest --environment jsdom --root src/",
     "build": "run-p type-check build-only",

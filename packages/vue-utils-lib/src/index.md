@@ -1,3 +1,3 @@
-# What an awesome lib
+# Vue Utils Library
 
-Yo
+This library contains a set of utilities for Vue.js shared across multiple projects.

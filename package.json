@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "An integrated Vue monorepo starter with Vite, Vitepress, Vitest, Turbo, Lefthook, Prettier, ESLint, Cypress, and more.",
   "scripts": {
+    "docs:dev": "vitepress dev packages",
+    "docs:build": "vitepress build packages",
+    "docs:preview": "vitepress preview packages",
     "prettier:check": "turbo prettier:check",
     "prettier:write": "turbo prettier:write",
     "lint:check": "turbo lint:check",
