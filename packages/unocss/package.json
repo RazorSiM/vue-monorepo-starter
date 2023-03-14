@@ -9,9 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vue/tsconfig": "^0.1.3",
-    "@vue-monorepo/eslint-config-vue": "workspace:*",
-    "typescript": "~4.9.5",
-    "unocss": "^0.50.3"
+    "@vue-monorepo/eslint-config-vue": "workspace:*"
   }
 }
