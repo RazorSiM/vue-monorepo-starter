@@ -10,7 +10,7 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       skipDiagnostics: true,
-      clearPureImport: false,
+      clearPureImport: true,
       cleanVueFileName: true,
     }),
   ],
