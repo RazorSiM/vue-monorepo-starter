@@ -1,17 +1,27 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "prettier:check": {},
-    "prettier:write": {},
-    "lint:check": {},
-    "lint:fix": {
+    "prettier:check": {
       "dependsOn": ["prettier:write"]
     },
-    "build": {
-      "dependsOn": ["^build"]
+    "prettier:write": {},
+    "lint:check": {
+      "dependsOn": ["prettier:write", "lint:fix", "^build"]
     },
-    "build:docs": {},
+    "lint:fix": {},
+    "build-only": {
+      "dependsOn": ["^build-only"],
+      "outputs": ["dist/**"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"]
+    },
+    "build:docs": {
+      "dependsOn": ["build"]
+    },
     "build:storybook": {
+      "dependsOn": ["build"],
       "inputs": [
         "src/**/*.stories.ts",
         "src/**/*.mdx",
@@ -20,12 +30,7 @@
       ]
     },
     "test:unit": {
-      "inputs": [
-        "src/**/*.ts",
-        "src/**/*.vue",
-        "tests/**/*.ts",
-        "tests/**/*.js"
-      ]
+      "inputs": ["src/**/*/.test.ts", "tests/**/*.ts", "tests/**/*.js"]
     },
     "test:component": {
       "inputs": [
@@ -45,7 +50,8 @@
       ]
     },
     "dev": {
-      "cache": false
+      "cache": false,
+      "persistent": true
     }
   }
 }
