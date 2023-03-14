@@ -6,7 +6,8 @@
     },
     "prettier:write": {},
     "lint:check": {
-      "dependsOn": ["prettier:write", "lint:fix", "^build"]
+      "dependsOn": ["prettier:write", "lint:fix", "^build"],
+      "inputs": ["src/**/*.{ts,js,vue}", "tests/**/*.ts", "tests/**/*.js"]
     },
     "lint:fix": {},
     "build-only": {
