@@ -54,6 +54,7 @@ export default defineConfig({
       "/apps/": [
         {
           text: "Apps",
+          link: "/apps/",
           items: [
             { text: "Introduction", link: "/apps/" },
             { text: "Vue SPA", link: "/apps/vue-spa/" },
@@ -63,6 +64,7 @@ export default defineConfig({
       "/packages/": [
         {
           text: "Packages",
+          link: "/packages/",
           items: [
             { text: "Introduction", link: "/packages/" },
             {
@@ -70,6 +72,10 @@ export default defineConfig({
               link: "/packages/vue-utils-lib/",
               collapsed: true,
               items: [
+                {
+                  text: "Introduction",
+                  link: "/packages/vue-utils-lib/",
+                },
                 {
                   text: "Changelog",
                   link: "/packages/vue-utils-lib/changelog",
@@ -91,13 +97,23 @@ export default defineConfig({
               text: "Vue UI Library",
               link: "/packages/ui/",
               collapsed: true,
-              items: [{ text: "Changelog", link: "/packages/ui/changelog" }],
+              items: [
+                {
+                  text: "Introduction",
+                  link: "/packages/ui/",
+                },
+                { text: "Changelog", link: "/packages/ui/changelog" },
+              ],
             },
             {
               text: "Eslint and Prettier configs",
               link: "/packages/eslint-config-vue/",
               collapsed: true,
               items: [
+                {
+                  text: "Introduction",
+                  link: "/packages/eslint-config-vue/",
+                },
                 {
                   text: "Changelog",
                   link: "/packages/eslint-config-vue/changelog",
@@ -109,6 +125,10 @@ export default defineConfig({
               link: "/packages/unocss/",
               collapsed: true,
               items: [
+                {
+                  text: "Introduction",
+                  link: "/packages/unocss/",
+                },
                 { text: "Changelog", link: "/packages/unocss/changelog" },
               ],
             },
