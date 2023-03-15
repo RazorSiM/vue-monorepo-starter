@@ -21,6 +21,7 @@
     "prettier:write": "prettier --write . --ignore-path .prettierignore"
   },
   "dependencies": {
+    "@vue-monorepo/api-gateway": "workspace:*",
     "@vue-monorepo/ui": "workspace:*",
     "@vue-monorepo/vue-utils-lib": "workspace:*"
   },
