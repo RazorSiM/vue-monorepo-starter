@@ -1,0 +1,45 @@
+{
+  "name": "@vue-monorepo/api-gateway",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with Fastify-CLI.",
+  "main": "app.js",
+  "module": "./generated/index.ts",
+  "files": [
+    "generated"
+  ],
+  "exports": {
+    ".": {
+      "import": "./generated/index.ts",
+      "require": "./generated/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./generated/index.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap \"test/**/*.test.js\"",
+    "start": "fastify start -l info app.js",
+    "dev": "fastify start -w -l info -P app.js",
+    "info": "fastify print-routes routes/users/index.js",
+    "generate-fetch-client": "openapi-generator-cli generate -i http://localhost:3000/docs/json -g typescript-fetch -o ./generated"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/autoload": "^5.0.0",
+    "@fastify/cors": "^8.2.1",
+    "@fastify/sensible": "^5.0.0",
+    "@fastify/swagger": "^8.3.1",
+    "@fastify/swagger-ui": "^1.5.0",
+    "@openapitools/openapi-generator-cli": "^2.5.2",
+    "fastify": "^4.0.0",
+    "fastify-cli": "^5.7.1",
+    "fastify-plugin": "^4.0.0"
+  },
+  "devDependencies": {
+    "tap": "^16.1.0"
+  }
+}
