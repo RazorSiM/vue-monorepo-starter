@@ -12,7 +12,7 @@
     "lint:fix": "turbo lint:fix",
     "test:unit": "turbo test:unit",
     "test:e2e": "turbo test:e2e",
-    "build": "turbo test:unit build lint:check test:e2e build:docs build:storybook",
+    "build": "turbo test:unit build build:storybook docs:build",
     "dev:vue-spa": "turbo run dev --filter=vue-spa...",
     "postinstall": "lefthook install"
   },

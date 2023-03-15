@@ -16,6 +16,8 @@ export default defineConfig({
     ":kind/:pkg/src/:type/index.md": ":kind/:pkg/:type/index.md",
     ":kind/:pkg/src/:type/:function/index.md":
       ":kind/:pkg/:type/:function/index.md",
+    // "services/api-gateway/README.md": "services/api-gateway/index.md",
+    // "services/api-gateway/CHANGELOG.md": "services/api-gateway/changelog.md",
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

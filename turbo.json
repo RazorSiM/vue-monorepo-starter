@@ -6,7 +6,7 @@
     },
     "prettier:write": {},
     "lint:check": {
-      "dependsOn": ["prettier:write", "lint:fix", "^build"],
+      "dependsOn": ["prettier:write", "lint:fix"],
       "inputs": ["src/**/*.{ts,js,vue}", "tests/**/*.ts", "tests/**/*.js"]
     },
     "lint:fix": {},
@@ -14,13 +14,12 @@
       "dependsOn": ["^build-only"],
       "outputs": ["dist/**"]
     },
+    "watch-and-generate": {},
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["watch-and-generate", "^build"],
       "outputs": ["dist/**"]
     },
-    "build:docs": {
-      "dependsOn": ["build"]
-    },
+    "//#docs:build": {},
     "build:storybook": {
       "dependsOn": ["build"],
       "inputs": [

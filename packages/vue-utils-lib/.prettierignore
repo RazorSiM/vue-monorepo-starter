@@ -29,3 +29,4 @@ coverage
 
 # Vitepress generated
 /src/.vitepress/cache
+vite-library.config.ts.*

@@ -13,9 +13,9 @@ hero:
     - theme: alt
       text: Packages
       link: /packages/
-    - theme: alt
-      text: Services
-      link: /services/
+    # - theme: alt
+    #   text: Services
+    #   link: /services/
 
 features:
   - title: PNPM

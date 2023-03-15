@@ -20,10 +20,11 @@
   },
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
-    "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js",
-    "info": "fastify print-routes routes/users/index.js",
-    "generate-fetch-client": "openapi-generator-cli generate -i http://localhost:3000/docs/json -g typescript-fetch -o ./generated"
+    "start": "fastify start -l info ./src/app.js",
+    "watch": "fastify start -w -l info -P ./src/app.js",
+    "info": "fastify print-routes ./src/routes/users/index.js",
+    "generate-fetch-client": "openapi-generator-cli generate -i http://localhost:3000/docs/json -g typescript-fetch -o ./generated",
+    "watch-and-generate": "run-p -r watch generate-fetch-client"
   },
   "keywords": [],
   "author": "",
