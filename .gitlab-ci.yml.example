@@ -1,0 +1,25 @@
+stages:
+  - build
+
+variables:
+  TURBO_TOKEN: $TURBO_TOKEN
+  TURBO_TEAM: $TURBO_TEAM
+  TURBO_API: $TURBO_API
+
+build:
+  stage: build
+  image: node:lts-buster
+  before_script:
+    - apt update
+    - apt install default-jdk libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb -y
+    - corepack enable
+    - corepack prepare pnpm@latest-7 --activate
+    - pnpm config set store-dir .pnpm-store
+  script:
+    - pnpm install
+    - pnpm build
+    - pnpm turbo lint:check test:e2e
+  cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - .pnpm-store

@@ -30,9 +30,11 @@
       ]
     },
     "test:unit": {
+      "dependsOn": ["^build"],
       "inputs": ["src/**/*/.test.ts", "tests/**/*.ts", "tests/**/*.js"]
     },
     "test:component": {
+      "dependsOn": ["^build"],
       "inputs": [
         "src/**/*.ts",
         "src/**/*.vue",

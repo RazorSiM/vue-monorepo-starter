@@ -1,0 +1,49 @@
+{
+  "folders": [
+    {
+      "name": "Frontend Monorepo Root",
+      "path": "../"
+    }
+  ],
+  "extensions": {
+    "recommendations": [
+      "formulahendry.auto-close-tag",
+      "formulahendry.auto-rename-tag",
+      "streetsidesoftware.code-spell-checker",
+      "dbaeumer.vscode-eslint",
+      "antfu.goto-alias",
+      "lokalise.i18n-ally",
+      "antfu.iconify",
+      "ms-vsliveshare.vsliveshare",
+      "csstools.postcss",
+      "esbenp.prettier-vscode",
+      "antfu.unocss",
+      "ZixuanChen.vitest-explorer",
+      "Vue.volar"
+    ]
+  },
+  "settings": {
+    "vitest.commandLine": "pnpm exec vitest",
+    "i18n-ally.sourceLanguage": "en",
+    "i18n-ally.keystyle": "nested",
+    "i18n-ally.localesPaths": "locales",
+    "i18n-ally.sortKeys": true,
+    "prettier.enable": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "files.associations": {
+      "*.css": "postcss"
+    },
+    "unocss.root": [
+      "packages/unocss",
+      "packages/ui-starter",
+      "apps/vue-spa-starter"
+    ],
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  }
+}

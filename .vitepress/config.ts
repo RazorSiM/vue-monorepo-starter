@@ -33,11 +33,14 @@ export default defineConfig({
           },
           {
             text: "Vue Utils Lib",
-            link: "/packages/vue-utils-lib/",
+            link: "/packages/vue-lib-starter/",
           },
         ],
       },
-      { text: "Apps", items: [{ text: "Vue SPA", link: "/apps/vue-spa/" }] },
+      {
+        text: "Apps",
+        items: [{ text: "Vue SPA Starter", link: "/apps/vue-spa-starter/" }],
+      },
     ],
 
     sidebar: {
@@ -59,7 +62,7 @@ export default defineConfig({
           link: "/apps/",
           items: [
             { text: "Introduction", link: "/apps/" },
-            { text: "Vue SPA", link: "/apps/vue-spa/" },
+            { text: "Vue SPA Starter", link: "/apps/vue-spa-starter/" },
           ],
         },
       ],
@@ -70,41 +73,41 @@ export default defineConfig({
           items: [
             { text: "Introduction", link: "/packages/" },
             {
-              text: "Vue Utils Libs",
-              link: "/packages/vue-utils-lib/",
+              text: "Vue Library Starter",
+              link: "/packages/vue-lib-starter/",
               collapsed: true,
               items: [
                 {
                   text: "Introduction",
-                  link: "/packages/vue-utils-lib/",
+                  link: "/packages/vue-lib-starter/",
                 },
                 {
                   text: "Changelog",
-                  link: "/packages/vue-utils-lib/changelog",
+                  link: "/packages/vue-lib-starter/changelog",
                 },
                 {
                   text: "Formatters",
-                  link: "/packages/vue-utils-lib/formatters/",
+                  link: "/packages/vue-lib-starter/formatters/",
                   collapsed: true,
                   items: [
                     {
                       text: "useNumberFormatter",
-                      link: "/packages/vue-utils-lib/formatters/useNumberFormatter/",
+                      link: "/packages/vue-lib-starter/formatters/useNumberFormatter/",
                     },
                   ],
                 },
               ],
             },
             {
-              text: "Vue UI Library",
-              link: "/packages/ui/",
+              text: "Vue UI Starter",
+              link: "/packages/ui-starter/",
               collapsed: true,
               items: [
                 {
                   text: "Introduction",
-                  link: "/packages/ui/",
+                  link: "/packages/ui-starter/",
                 },
-                { text: "Changelog", link: "/packages/ui/changelog" },
+                { text: "Changelog", link: "/packages/ui-starter/changelog" },
               ],
             },
             {

@@ -13,6 +13,11 @@
     "*.css": "postcss"
   },
   "unocss.root": [
-    "./packages/unocss"
-  ]
+    "packages/unocss",
+    "packages/ui-starter",
+    "apps/vue-spa-starter"
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

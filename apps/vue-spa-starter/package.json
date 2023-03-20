@@ -1,0 +1,33 @@
+{
+  "name": "@vue-monorepo/vue-spa-starter",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview",
+    "storybook:dev": "storybook dev -p 6006 --no-open",
+    "storybook:build": "storybook build",
+    "test:unit": "vitest run --environment jsdom --root src/",
+    "test:unit:dev": "vitest --environment jsdom --root src/",
+    "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
+    "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' http://localhost:4173 'cypress open --e2e'",
+    "test:component": "cypress run --component",
+    "test:component:dev": "cypress open --component",
+    "build-only": "rm -rf ./dist && vite build",
+    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+    "lint:check": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "prettier:check": "prettier --check . --ignore-path .prettierignore",
+    "prettier:write": "prettier --write . --ignore-path .prettierignore"
+  },
+  "dependencies": {
+    "@vue-monorepo/api-gateway": "workspace:*",
+    "@vue-monorepo/ui-starter": "workspace:*",
+    "@vue-monorepo/vue-lib-starter": "workspace:*"
+  },
+  "devDependencies": {
+    "@vue-monorepo/eslint-config-vue": "workspace:*",
+    "@vue-monorepo/unocss": "workspace:*"
+  }
+}
