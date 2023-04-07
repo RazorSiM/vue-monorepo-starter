@@ -1,5 +1,5 @@
 {
-  "name": "@vue-monorepo/ui-starter",
+  "name": "@razorsim/ui-starter",
   "version": "0.0.0",
   "main": "./dist/ui-starter.umd.js",
   "module": "./dist/ui-starter.mjs",
@@ -36,7 +36,7 @@
     "storybook:build": "storybook build"
   },
   "devDependencies": {
-    "@vue-monorepo/eslint-config-vue": "workspace:*",
-    "@vue-monorepo/unocss": "workspace:*"
+    "@razorsim/eslint-config-vue": "workspace:*",
+    "@razorsim/unocss": "workspace:*"
   }
 }

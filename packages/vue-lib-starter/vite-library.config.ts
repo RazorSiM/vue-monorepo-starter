@@ -1,10 +1,15 @@
 import { resolve } from "path";
-import { defineConfig } from "vite";
+import { defineConfig, searchForWorkspaceRoot } from "vite";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    fs: {
+      allow: [searchForWorkspaceRoot(process.cwd())],
+    },
+  },
   plugins: [
     vue(),
     dts({
@@ -29,12 +34,28 @@ export default defineConfig({
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
       // into your library
-      external: ["vue", "@vueuse/core"],
+      external: [
+        "vue",
+        "@vueuse/core",
+        "@vueuse/head",
+        "@vueuse/shared",
+        "dayjs",
+        "dayjs/plugin/relativeTime",
+        "dayjs/plugin/utc",
+        "dayjs/plugin/timezone",
+        "dayjs/plugin/duration",
+      ],
       output: {
         // Provide global variables to use in the UMD build
         // for externalized deps
         globals: {
           vue: "Vue",
+          "@vueuse/core": "VueUse",
+          "@vueuse/head": "VueUseHead",
+          "@vueuse/shared": "VueUseShared",
+          dayjs: "dayjs",
+          "dayjs/plugin/duration": "dayjsDuration",
+          "dayjs/plugin/utc": "dayjsUTC",
         },
       },
     },

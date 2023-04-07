@@ -5,9 +5,12 @@
     "src/**/__tests__/*",
     "src/**/*.stories.ts",
     "src/**/*.spec.ts",
+    "src/**/*.test.ts",
     "src/**/*.cy.ts"
   ],
   "compilerOptions": {
+    "ignoreDeprecations": "5.0",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "composite": true,
     "baseUrl": ".",
     "paths": {

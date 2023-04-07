@@ -1,8 +1,9 @@
 {
-  "name": "@vue-monorepo/eslint-config-vue",
-  "version": "0.0.1",
+  "name": "@razorsim/eslint-config-vue",
+  "version": "0.0.0",
   "main": "index.cjs",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "prettier:check": "prettier --check . --ignore-path .prettierignore",
     "prettier:write": "prettier --write . --ignore-path .prettierignore"

@@ -1,13 +1,12 @@
 {
-  "name": "@vue-monorepo/vue-spa-starter",
+  "name": "vue-spa-starter",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
-    "storybook:dev": "storybook dev -p 6006 --no-open",
-    "storybook:build": "storybook build",
+    "cypress": "cypress open --e2e",
     "test:unit": "vitest run --environment jsdom --root src/",
     "test:unit:dev": "vitest --environment jsdom --root src/",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
@@ -22,12 +21,12 @@
     "prettier:write": "prettier --write . --ignore-path .prettierignore"
   },
   "dependencies": {
-    "@vue-monorepo/api-gateway": "workspace:*",
-    "@vue-monorepo/ui-starter": "workspace:*",
-    "@vue-monorepo/vue-lib-starter": "workspace:*"
+    "@razorsim/api-gateway": "workspace:*",
+    "@razorsim/ui-starter": "workspace:*",
+    "@razorsim/vue-lib-starter": "workspace:*"
   },
   "devDependencies": {
-    "@vue-monorepo/eslint-config-vue": "workspace:*",
-    "@vue-monorepo/unocss": "workspace:*"
+    "@razorsim/eslint-config-vue": "workspace:*",
+    "@razorsim/unocss": "workspace:*"
   }
 }

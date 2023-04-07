@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useGlobalStore } from "@/stores/global";
-import { useNumberFormatter } from "@vue-monorepo/vue-lib-starter";
-import { UiButton } from "@vue-monorepo/ui-starter";
+import { useNumberFormatter } from "@razorsim/vue-lib-starter";
+import { UiButton } from "@razorsim/ui-starter";
 interface Badge {
   img: string;
   url: string;

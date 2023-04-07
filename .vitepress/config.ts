@@ -16,8 +16,6 @@ export default defineConfig({
     ":kind/:pkg/src/:type/index.md": ":kind/:pkg/:type/index.md",
     ":kind/:pkg/src/:type/:function/index.md":
       ":kind/:pkg/:type/:function/index.md",
-    // "services/api-gateway/README.md": "services/api-gateway/index.md",
-    // "services/api-gateway/CHANGELOG.md": "services/api-gateway/changelog.md",
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -32,7 +30,7 @@ export default defineConfig({
             link: "/packages/",
           },
           {
-            text: "Vue Utils Lib",
+            text: "Vue Lib Starter",
             link: "/packages/vue-lib-starter/",
           },
         ],
@@ -73,7 +71,7 @@ export default defineConfig({
           items: [
             { text: "Introduction", link: "/packages/" },
             {
-              text: "Vue Library Starter",
+              text: "Vue Lib Starter",
               link: "/packages/vue-lib-starter/",
               collapsed: true,
               items: [
@@ -94,12 +92,16 @@ export default defineConfig({
                       text: "useNumberFormatter",
                       link: "/packages/vue-lib-starter/formatters/useNumberFormatter/",
                     },
+                    {
+                      text: "useDurationBetweenDates",
+                      link: "/packages/vue-lib-starter/formatters/useDurationBetweenDates/",
+                    },
                   ],
                 },
               ],
             },
             {
-              text: "Vue UI Starter",
+              text: "Vue Ui Starter",
               link: "/packages/ui-starter/",
               collapsed: true,
               items: [

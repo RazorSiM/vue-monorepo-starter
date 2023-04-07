@@ -1,4 +1,4 @@
-import config from "@vue-monorepo/unocss";
+import config from "@razorsim/unocss";
 export default {
   ...config,
 };

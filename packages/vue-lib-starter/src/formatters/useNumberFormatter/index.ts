@@ -1,5 +1,5 @@
 import { unref, computed } from "vue";
-import type { MaybeRef } from "@vueuse/shared";
+import type { MaybeRef } from "@vueuse/core";
 
 export function useNumberFormatter(
   value: MaybeRef<number>,

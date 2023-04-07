@@ -5,3 +5,4 @@ generated
 .vitepress/dist
 .vitepress/cache
 vite-library.config.ts.*
+storybook-static

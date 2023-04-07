@@ -1,18 +1,22 @@
 <script setup lang="ts">
-import { UserApi, Configuration } from "@vue-monorepo/api-gateway";
-import { UiButton } from "@vue-monorepo/ui-starter";
+import type { OpenAPIConfig } from "@razorsim/api-gateway";
+import { AppClient } from "@razorsim/api-gateway";
+import { UiButton } from "@razorsim/ui-starter";
 import { useQuery } from "@tanstack/vue-query";
 
-const configuration = new Configuration({
-  basePath: "http://localhost:3000",
-});
-const UserApiClient = new UserApi(configuration);
+const configuration: OpenAPIConfig = {
+  BASE: "http://localhost:3000",
+  VERSION: "v1",
+  WITH_CREDENTIALS: false,
+  CREDENTIALS: "include",
+};
+const AppApiClient = new AppClient(configuration);
 
 const userId = ref(1);
 const autoFetchEnabled = ref(true);
 const { isInitialLoading, isError, error, data, refetch } = useQuery({
   queryKey: ["user", userId],
-  queryFn: () => UserApiClient.usersInfoIdGet({ id: userId.value }),
+  queryFn: () => AppApiClient.user.getUsersInfo(userId.value),
   enabled: autoFetchEnabled,
 });
 </script>
@@ -23,8 +27,8 @@ const { isInitialLoading, isError, error, data, refetch } = useQuery({
     <p>
       In this page, we are consuming the
       <strong>OpenApi fetch client</strong> generated from
-      <code>@vue-monorepo/api-gateway</code> via <code>vue-query</code> to do
-      some api calls.
+      <code>@razorsim/api-gateway</code> via <code>vue-query</code> to do some
+      api calls.
     </p>
     <p>
       To make this work, you will need to generate the
@@ -34,7 +38,7 @@ const { isInitialLoading, isError, error, data, refetch } = useQuery({
     <ol>
       <li>
         <code>pnpm dev:vue-spa-starter</code> to run the app and
-        @vue-monorepo/api-gateway in dev mode
+        @razorsim/api-gateway in dev mode
       </li>
       <li>
         <code>pnpm --filter api-gateway generate-fetch-client</code> to generate

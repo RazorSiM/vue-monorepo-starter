@@ -1,4 +1,4 @@
-# Vue Utils Lib
+# Common Library
 
-This is an example of a library that can be used in Vue.js projects.
-It's built with Vite and has Vitepress for documentation.
+This library contains common utilities for the other packages.
+It's a mix of Vue composables and plain JavaScript functions.

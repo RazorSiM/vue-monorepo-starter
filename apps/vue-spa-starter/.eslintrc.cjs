@@ -1,5 +1,8 @@
 /* eslint-env node */
 module.exports = {
   root: true,
-  extends: ["@vue-monorepo/eslint-config-vue", "./.eslintrc-auto-import.json"],
+  extends: ["@razorsim/eslint-config-vue", "./.eslintrc-auto-import.json"],
+  rules: {
+    "no-undef": "off",
+  },
 };

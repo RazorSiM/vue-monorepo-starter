@@ -1,8 +1,9 @@
 {
-  "name": "@vue-monorepo/api-gateway",
+  "name": "@razorsim/api-gateway",
   "version": "0.0.0",
   "description": "This project was bootstrapped with Fastify-CLI.",
   "main": "app.js",
+  "private": true,
   "module": "./generated/index.ts",
   "files": [
     "generated"
@@ -21,10 +22,10 @@
   "scripts": {
     "test": "tap \"test/**/*.test.js\"",
     "start": "fastify start -l info ./src/app.js",
-    "dev": "fastify start -w -l info -P ./src/app.js",
+    "watch": "fastify start -w -l info -P ./src/app.js",
     "info": "fastify print-routes ./src/routes/users/index.js",
-    "generate-fetch-client": "openapi-generator-cli generate -i http://localhost:3000/docs/json -g typescript-fetch -o ./generated",
-    "dev-and-generate": "run-p -r dev generate-fetch-client"
+    "generate-fetch-client": "rm -rf ./generated && openapi --name AppClient --input http://localhost:3000/docs/json --output ./generated --client fetch ",
+    "start-and-generate": "start-server-and-test start http://localhost:3000 generate-fetch-client"
   },
   "keywords": [],
   "author": "",
@@ -35,12 +36,12 @@
     "@fastify/sensible": "^5.0.0",
     "@fastify/swagger": "^8.3.1",
     "@fastify/swagger-ui": "^1.5.0",
-    "@openapitools/openapi-generator-cli": "^2.5.2",
     "fastify": "^4.0.0",
     "fastify-cli": "^5.7.1",
     "fastify-plugin": "^4.0.0"
   },
   "devDependencies": {
+    "openapi-typescript-codegen": "^0.23.0",
     "tap": "^16.1.0"
   }
 }

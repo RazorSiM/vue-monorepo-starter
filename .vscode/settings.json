@@ -1,7 +1,7 @@
 {
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.localesPaths": "locales",
+  "i18n-ally.localesPaths": ["locales", "apps/**/locales"],
   "i18n-ally.sortKeys": true,
   "prettier.enable": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -19,5 +19,6 @@
   ],
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

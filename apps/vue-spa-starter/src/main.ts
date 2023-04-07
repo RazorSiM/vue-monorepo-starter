@@ -7,7 +7,7 @@ import router from "./router";
 
 import "uno.css";
 import "@unocss/reset/tailwind.css";
-import "@vue-monorepo/ui-starter/index.css";
+import "@razorsim/ui-starter/index.css";
 
 import DefaultLayout from "./layouts/DefaultLayout.vue";
 import EmptyLayout from "./layouts/EmptyLayout.vue";

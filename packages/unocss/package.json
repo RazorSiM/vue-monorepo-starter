@@ -1,6 +1,6 @@
 {
-  "name": "@vue-monorepo/unocss",
-  "version": "0.0.1",
+  "name": "@razorsim/unocss",
+  "version": "0.0.0",
   "description": "",
   "private": true,
   "main": "./unocss.config.ts",
@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@vue-monorepo/eslint-config-vue": "workspace:*"
+    "@razorsim/eslint-config-vue": "workspace:*"
   }
 }

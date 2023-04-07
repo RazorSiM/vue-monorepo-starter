@@ -1,6 +1,6 @@
 {
-  "name": "@vue-monorepo/vue-lib-starter",
-  "version": "0.0.1",
+  "name": "@razorsim/vue-lib-starter",
+  "version": "0.0.0",
   "type": "module",
   "main": "./dist/vue-lib-starter.umd.cjs",
   "module": "./dist/vue-lib-starter.js",
@@ -29,7 +29,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@vue-monorepo/eslint-config-vue": "workspace:*",
-    "@vue-monorepo/unocss": "workspace:*"
+    "@razorsim/eslint-config-vue": "workspace:*",
+    "@razorsim/unocss": "workspace:*"
   }
 }

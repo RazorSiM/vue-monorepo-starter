@@ -18,6 +18,7 @@ import "./commands";
 import "uno.css";
 
 import "@unocss/reset/tailwind.css";
+import "../../src/assets/styles/fonts.css";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

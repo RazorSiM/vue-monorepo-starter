@@ -1,7 +1,7 @@
 /* eslint-env node */
 module.exports = {
   root: true,
-  extends: ["@vue-monorepo/eslint-config-vue"],
+  extends: ["@razorsim/eslint-config-vue"],
   rules: {
     "vue/multi-word-component-names": "off",
   },

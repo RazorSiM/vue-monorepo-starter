@@ -17,7 +17,7 @@
 import "./commands";
 import "uno.css";
 import "@unocss/reset/tailwind.css";
-import "@vue-monorepo/ui-starter/index.css";
+import "@razorsim/ui-starter/index.css";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
