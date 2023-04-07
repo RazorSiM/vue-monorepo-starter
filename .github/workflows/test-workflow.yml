@@ -2,6 +2,9 @@ name: lint and test
 on: [push]
 jobs:
   lint-and-test:
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
