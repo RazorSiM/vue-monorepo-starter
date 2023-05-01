@@ -1,7 +1,7 @@
-import BaseInput from "./index.vue";
-import { errorClasses, successClasses } from "./index.vue";
-import { string } from "zod";
-const schema = string().min(3).max(5);
+import { string } from 'zod'
+import BaseInput, { errorClasses, successClasses } from './index.vue'
+
+const schema = string().min(3).max(5)
 const defaultProps = {
   fieldSchema: schema,
   disabled: false,
@@ -12,119 +12,119 @@ const defaultProps = {
   max: 524288,
   min: 0,
   step: 1,
-};
-describe("UiBaseInput", () => {
+}
+describe('UiBaseInput', () => {
   const slots = {
-    label: "test",
-  };
+    label: 'test',
+  }
 
-  it("renders an input", () => {
-    //@ts-expect-error wait for cypress to update vue sfc types
+  it('renders an input', () => {
+    // @ts-expect-error wait for cypress to update vue sfc types
     cy.mount(BaseInput, {
       props: {
-        modelValue: "",
-        name: "test",
-        placeholder: "input something",
-        type: "text",
+        modelValue: '',
+        name: 'test',
+        placeholder: 'input something',
+        type: 'text',
         ...defaultProps,
       },
       slots,
-    });
-    cy.get("input").should("exist");
-    cy.get("label").should("exist").contains("test");
-  });
-  it("should display the right background color when the input is wrong", () => {
-    //@ts-expect-error wait for cypress to update vue sfc types
+    })
+    cy.get('input').should('exist')
+    cy.get('label').should('exist').contains('test')
+  })
+  it('should display the right background color when the input is wrong', () => {
+    // @ts-expect-error wait for cypress to update vue sfc types
     cy.mount(BaseInput, {
       props: {
-        modelValue: "",
-        name: "test",
-        placeholder: "input something",
-        type: "text",
+        modelValue: '',
+        name: 'test',
+        placeholder: 'input something',
+        type: 'text',
         ...defaultProps,
       },
       slots,
-    });
-    cy.get("input").type("12");
-    cy.get("input").should("have.class", errorClasses);
-  });
-  it("should display a message when the input is wrong", () => {
-    //@ts-expect-error wait for cypress to update vue sfc types
+    })
+    cy.get('input').type('12')
+    cy.get('input').should('have.class', errorClasses)
+  })
+  it('should display a message when the input is wrong', () => {
+    // @ts-expect-error wait for cypress to update vue sfc types
     cy.mount(BaseInput, {
       props: {
-        modelValue: "",
-        name: "test",
-        placeholder: "input something",
-        type: "text",
+        modelValue: '',
+        name: 'test',
+        placeholder: 'input something',
+        type: 'text',
         ...defaultProps,
       },
       slots,
-    });
-    cy.get("input").type("12");
-    cy.get("p")
-      .should("be.visible")
-      .should("contain.text", "String must contain at least 3 character(s)");
-  });
-  it("should display the right css classes when the input is correct", () => {
-    //@ts-expect-error wait for cypress to update vue sfc types
+    })
+    cy.get('input').type('12')
+    cy.get('p')
+      .should('be.visible')
+      .should('contain.text', 'String must contain at least 3 character(s)')
+  })
+  it('should display the right css classes when the input is correct', () => {
+    // @ts-expect-error wait for cypress to update vue sfc types
     cy.mount(BaseInput, {
       props: {
-        modelValue: "",
-        name: "test",
-        placeholder: "input something",
-        type: "text",
+        modelValue: '',
+        name: 'test',
+        placeholder: 'input something',
+        type: 'text',
         ...defaultProps,
       },
       slots,
-    });
-    cy.get("input").type("123");
-    cy.get("input").should("have.class", successClasses);
-  });
-  it("should display the right background color when the input is wrong", () => {
-    //@ts-expect-error wait for cypress to update vue sfc types
+    })
+    cy.get('input').type('123')
+    cy.get('input').should('have.class', successClasses)
+  })
+  it('should display the right background color when the input is wrong', () => {
+    // @ts-expect-error wait for cypress to update vue sfc types
     cy.mount(BaseInput, {
       props: {
-        modelValue: "",
-        name: "test",
-        placeholder: "input something",
-        type: "text",
+        modelValue: '',
+        name: 'test',
+        placeholder: 'input something',
+        type: 'text',
         ...defaultProps,
       },
       slots,
-    });
-    cy.get("input").type("12");
-    cy.get("input").should("have.class", errorClasses);
-  });
-  it("should display a message when the input is wrong", () => {
-    //@ts-expect-error wait for cypress to update vue sfc types
+    })
+    cy.get('input').type('12')
+    cy.get('input').should('have.class', errorClasses)
+  })
+  it('should display a message when the input is wrong', () => {
+    // @ts-expect-error wait for cypress to update vue sfc types
     cy.mount(BaseInput, {
       props: {
-        modelValue: "",
-        name: "test",
+        modelValue: '',
+        name: 'test',
         fieldSchema: schema,
-        placeholder: "input something",
-        type: "text",
+        placeholder: 'input something',
+        type: 'text',
       },
       slots,
-    });
-    cy.get("input").type("12");
-    cy.get("p")
-      .should("be.visible")
-      .should("contain.text", "String must contain at least 3 character(s)");
-  });
-  it("should display the right css classes when the input is correct", () => {
-    //@ts-expect-error wait for cypress to update vue sfc types
+    })
+    cy.get('input').type('12')
+    cy.get('p')
+      .should('be.visible')
+      .should('contain.text', 'String must contain at least 3 character(s)')
+  })
+  it('should display the right css classes when the input is correct', () => {
+    // @ts-expect-error wait for cypress to update vue sfc types
     cy.mount(BaseInput, {
       props: {
-        modelValue: "",
-        name: "test",
+        modelValue: '',
+        name: 'test',
         fieldSchema: schema,
-        placeholder: "input something",
-        type: "text",
+        placeholder: 'input something',
+        type: 'text',
       },
       slots,
-    });
-    cy.get("input").type("123");
-    cy.get("input").should("have.class", successClasses);
-  });
-});
+    })
+    cy.get('input').type('123')
+    cy.get('input').should('have.class', successClasses)
+  })
+})

@@ -1,76 +1,77 @@
 <script lang="ts" setup>
-import { useGlobalStore } from "@/stores/global";
-import { useNumberFormatter } from "@razorsim/vue-lib-starter";
-import { UiButton } from "@razorsim/ui-starter";
-interface Badge {
-  img: string;
-  url: string;
-  title: string;
-}
-const globalStore = useGlobalStore();
+import { useNumberFormatter } from '@razorsim/vue-lib-starter'
+import { UiButton } from '@razorsim/ui-starter'
+import { useGlobalStore } from '@/stores/global'
 
-const preferredLanguages = usePreferredLanguages();
-const language = ref(preferredLanguages.value[0]);
-const number = ref(123456789);
+interface Badge {
+  img: string
+  url: string
+  title: string
+}
+const globalStore = useGlobalStore()
+
+const preferredLanguages = usePreferredLanguages()
+const language = ref(preferredLanguages.value[0])
+const number = ref(123456789)
 const options = ref({
-  style: "currency",
-  currency: "USD",
-  currencyDisplay: "symbol",
+  style: 'currency',
+  currency: 'USD',
+  currencyDisplay: 'symbol',
   maximumFractionDigits: 2,
   minimumFractionDigits: 2,
-});
-const { formattedNumber } = useNumberFormatter(number, language, options);
+})
+const { formattedNumber } = useNumberFormatter(number, language, options)
 
 const counterColor = computed(() =>
-  globalStore.count > 0 ? "text-indigo-400" : "text-pink-300"
-);
+  globalStore.count > 0 ? 'text-indigo-400' : 'text-pink-300',
+)
 const badges: Badge[] = [
   {
-    img: "https://img.shields.io/badge/-Vue-42b883?style=flat-square&logo=vue.js&logoColor=white",
-    url: "https://vuejs.org/",
-    title: "Vue",
+    img: 'https://img.shields.io/badge/-Vue-42b883?style=flat-square&logo=vue.js&logoColor=white',
+    url: 'https://vuejs.org/',
+    title: 'Vue',
   },
   {
-    img: "https://img.shields.io/badge/-Vite-646cff?style=flat-square&logo=vite&logoColor=white",
-    url: "https://vitejs.dev/",
-    title: "Vite",
+    img: 'https://img.shields.io/badge/-Vite-646cff?style=flat-square&logo=vite&logoColor=white',
+    url: 'https://vitejs.dev/',
+    title: 'Vite',
   },
   {
-    img: "https://img.shields.io/badge/-TypeScript-007acc?style=flat-square&logo=typescript&logoColor=white",
-    url: "https://www.typescriptlang.org/",
-    title: "Typescript",
+    img: 'https://img.shields.io/badge/-TypeScript-007acc?style=flat-square&logo=typescript&logoColor=white',
+    url: 'https://www.typescriptlang.org/',
+    title: 'Typescript',
   },
   {
-    img: "https://img.shields.io/badge/-PNPM-ff5c93?style=flat-square&logo=pnpm&logoColor=white",
-    url: "https://pnpm.io/",
-    title: "PNPM",
+    img: 'https://img.shields.io/badge/-PNPM-ff5c93?style=flat-square&logo=pnpm&logoColor=white',
+    url: 'https://pnpm.io/',
+    title: 'PNPM',
   },
   {
-    img: "https://img.shields.io/badge/-Volar-42b883?style=flat-square&logo=vue.js&logoColor=white",
-    url: "(https://marketplace.visualstudio.com/items?itemName=Vue.volar",
-    title: "Volar",
+    img: 'https://img.shields.io/badge/-Volar-42b883?style=flat-square&logo=vue.js&logoColor=white',
+    url: '(https://marketplace.visualstudio.com/items?itemName=Vue.volar',
+    title: 'Volar',
   },
   {
-    img: "https://img.shields.io/badge/-Vitest-42b883?style=flat-square&logo=vue.js&logoColor=white",
-    url: "https://vitest.dev/",
-    title: "Vitest",
+    img: 'https://img.shields.io/badge/-Vitest-42b883?style=flat-square&logo=vue.js&logoColor=white',
+    url: 'https://vitest.dev/',
+    title: 'Vitest',
   },
   {
-    img: "https://img.shields.io/badge/-Cypress-17202c?style=flat-square&logo=cypress&logoColor=white",
-    url: "https://www.cypress.io/",
-    title: "Cypress",
+    img: 'https://img.shields.io/badge/-Cypress-17202c?style=flat-square&logo=cypress&logoColor=white',
+    url: 'https://www.cypress.io/',
+    title: 'Cypress',
   },
   {
-    img: "https://img.shields.io/badge/-ESLint-4b32c3?style=flat-square&logo=eslint&logoColor=white",
-    url: "https://eslint.org/",
-    title: "Eslint",
+    img: 'https://img.shields.io/badge/-ESLint-4b32c3?style=flat-square&logo=eslint&logoColor=white',
+    url: 'https://eslint.org/',
+    title: 'Eslint',
   },
   {
-    img: "https://img.shields.io/badge/-Antfu-42b883?style=flat-square&logo=vue.js&logoColor=white",
-    url: "https://github.com/antfu/eslint-config",
-    title: "Antfu/eslint-config",
+    img: 'https://img.shields.io/badge/-Antfu-42b883?style=flat-square&logo=vue.js&logoColor=white',
+    url: 'https://github.com/antfu/eslint-config',
+    title: 'Antfu/eslint-config',
   },
-];
+]
 </script>
 
 <template>
@@ -82,7 +83,7 @@ const badges: Badge[] = [
       target="_blank"
       class="hover:(scale-105) transition"
     >
-      <img :src="badge.img" :alt="badge.title" class="rounded" />
+      <img :src="badge.img" :alt="badge.title" class="rounded">
     </a>
   </div>
   <div class="prose text-xl dark:prose-light">
@@ -100,7 +101,9 @@ const badges: Badge[] = [
       Here's a list of what's included in this template. Everything has been
       configured to work out of the box with Eslint, Typescript and VScode.
     </p>
-    <h3 id="features">Features</h3>
+    <h3 id="features">
+      Features
+    </h3>
     <ul>
       <li><a target="_blank" href="https://vuejs.org">Vue3</a>;</li>
       <li>
@@ -122,24 +125,21 @@ const badges: Badge[] = [
             <a
               target="_blank"
               href="https://github.com/unocss/unocss#style-resetting"
-              >@unocss/reset</a
-            >
+            >@unocss/reset</a>
             with Tailwind settings;
           </li>
           <li>
             <a
               target="_blank"
               href="https://github.com/unocss/unocss/tree/main/packages/preset-uno"
-              >@unocss/preset-uno</a
-            >
+            >@unocss/preset-uno</a>
             as a base preset;
           </li>
           <li>
             <a
               target="_blank"
               href="https://github.com/unocss/unocss/tree/main/packages/preset-icons"
-              >@unocss/preset-icons</a
-            >
+            >@unocss/preset-icons</a>
             to use icons from
             <a target="_blank" href="https://icones.js.org/">Icones</a>;
           </li>
@@ -147,16 +147,14 @@ const badges: Badge[] = [
             <a
               target="_blank"
               href="https://github.com/unocss/unocss/tree/main/packages/preset-typography"
-              >@unocss/preset-web-fonts</a
-            >
+            >@unocss/preset-web-fonts</a>
             so you can grab your web fonts and set them up easily;
           </li>
           <li>
             <a
               target="_blank"
               href="https://github.com/unocss/unocss/tree/main/packages/transformer-variant-group"
-              >@unocss/transformer-variant-group</a
-            >
+            >@unocss/transformer-variant-group</a>
             to use the <code>group</code> variant; ex:
             <code>hover:(bg-blue-500 text-white font-bold)</code>;
           </li>
@@ -166,7 +164,9 @@ const badges: Badge[] = [
         Scaffolded an example on how you could implement a multi-layout approach
       </li>
     </ul>
-    <h3 id="development-experience">Development Experience</h3>
+    <h3 id="development-experience">
+      Development Experience
+    </h3>
     <ul>
       <li>
         <a target="_blank" href="https://vitejs.dev/">Vite</a> for development
@@ -175,21 +175,15 @@ const badges: Badge[] = [
       <li>Typescript support for <code>.vue</code> files;</li>
       <li>
         <a target="_blank" href="https://eslint.org/">Eslint</a> with
-        <a target="_blank" href="https://github.com/antfu/eslint-config"
-          >antfu/eslint-config</a
-        >
+        <a target="_blank" href="https://github.com/antfu/eslint-config">antfu/eslint-config</a>
         for linting and formatting;
       </li>
       <li>
-        <a target="_blank" href="https://github.com/evilmartians/lefthook"
-          >Lefthook</a
-        >
+        <a target="_blank" href="https://github.com/evilmartians/lefthook">Lefthook</a>
         for ez git(gud) hooks;
       </li>
       <li>
-        <a target="_blank" href="https://github.com/antfu/unplugin-auto-import"
-          >Unplugin Auto Import</a
-        >
+        <a target="_blank" href="https://github.com/antfu/unplugin-auto-import">Unplugin Auto Import</a>
         to automatically import stuff in your files; No more
         <code>import { defineComponent } from &#39;vue&#39;</code>;
       </li>
@@ -197,19 +191,18 @@ const badges: Badge[] = [
         <a
           target="_blank"
           href="https://github.com/antfu/unplugin-vue-components"
-          >Unplugin Vue Components</a
-        >
+        >Unplugin Vue Components</a>
         to automatically import components;
       </li>
       <li>
-        <a target="_blank" href="https://github.com/sxzz/unplugin-vue-macros"
-          >Unplugin Vue Macros</a
-        >
+        <a target="_blank" href="https://github.com/sxzz/unplugin-vue-macros">Unplugin Vue Macros</a>
         to extend Vue macros and syntax sugar;
       </li>
       <li>Vscode will fix and format on save with Eslint;</li>
     </ul>
-    <h3 id="testing">Testing</h3>
+    <h3 id="testing">
+      Testing
+    </h3>
     <ul>
       <li>
         <a target="_blank" href="https://vitest.dev/">Vitest</a> for unit
@@ -220,20 +213,20 @@ const badges: Badge[] = [
         testing;
       </li>
     </ul>
-    <h2 id="recommended-ide-setup">Recommended IDE Setup</h2>
+    <h2 id="recommended-ide-setup">
+      Recommended IDE Setup
+    </h2>
     <p>
       <a target="_blank" href="https://code.visualstudio.com/">VSCode</a> +
       <a
         target="_blank"
         href="https://marketplace.visualstudio.com/items?itemName=Vue.volar"
-        >Volar</a
-      >
+      >Volar</a>
       (and disable Vetur) +
       <a
         target="_blank"
         href="https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin"
-        >TypeScript Vue Plugin (Volar)</a
-      >.
+      >TypeScript Vue Plugin (Volar)</a>.
     </p>
     <h2 id="type-support-for-vue-imports-in-ts">
       Type Support for <code>.vue</code> Imports in TS
@@ -245,8 +238,7 @@ const badges: Badge[] = [
       <a
         target="_blank"
         href="https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin"
-        >TypeScript Vue Plugin (Volar)</a
-      >
+      >TypeScript Vue Plugin (Volar)</a>
       to make the TypeScript language service aware of <code>.vue</code> types.
     </p>
     <p>
@@ -255,8 +247,7 @@ const badges: Badge[] = [
       <a
         target="_blank"
         href="https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669"
-        >Take Over Mode</a
-      >
+      >Take Over Mode</a>
       that is more performant. You can enable it by the following steps:
     </p>
     <ol>
@@ -278,14 +269,16 @@ const badges: Badge[] = [
         <code>Developer: Reload Window</code> from the command palette.
       </li>
     </ol>
-    <h2 id="customize-configuration">Customize configuration</h2>
+    <h2 id="customize-configuration">
+      Customize configuration
+    </h2>
     <p>
       See
-      <a target="_blank" href="https://vitejs.dev/config/"
-        >Vite Configuration Reference</a
-      >.
+      <a target="_blank" href="https://vitejs.dev/config/">Vite Configuration Reference</a>.
     </p>
-    <h2 id="project-setup">Project Setup</h2>
+    <h2 id="project-setup">
+      Project Setup
+    </h2>
     <p><code>pnpm install</code></p>
     <h3 id="compile-and-hot-reload-for-development">
       Compile and Hot-Reload for Development
@@ -323,7 +316,7 @@ pnpm run test:e2e
     </h3>
     <p><code>pnpm run lint</code></p>
   </div>
-  <hr class="border mb-10" />
+  <hr class="border mb-10">
   <div class="mb-10">
     <h3 class="mb-5 text-2xl">
       Example of how you can use utilities imported from the monorepo libraries:
@@ -345,7 +338,7 @@ pnpm run test:e2e
         v-model.number="number"
         type="number"
         class="bg-light-800 dark:bg-gray-800 px-3 py-1 rounded-lg"
-      />
+      >
     </label>
     <p>Formatted Number: {{ formattedNumber }}</p>
   </div>
@@ -360,12 +353,12 @@ pnpm run test:e2e
       }}</span>
     </div>
     <div class="flex space-x-5">
-      <UiButton color="warning" @click="globalStore.decreaseCounter()"
-        >Decrease Counter by 1</UiButton
-      >
-      <UiButton color="primary" @click="globalStore.incrementCounter()"
-        >Increase Counter by 1</UiButton
-      >
+      <UiButton color="warning" @click="globalStore.decreaseCounter()">
+        Decrease Counter by 1
+      </UiButton>
+      <UiButton color="primary" @click="globalStore.incrementCounter()">
+        Increase Counter by 1
+      </UiButton>
     </div>
   </div>
 </template>

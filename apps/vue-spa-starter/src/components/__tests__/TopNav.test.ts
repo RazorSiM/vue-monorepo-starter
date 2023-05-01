@@ -1,8 +1,8 @@
-import { describe, it, expect } from "vitest";
-import TopNav from "../TopNav.vue";
+import { describe, expect, it } from 'vitest'
+import TopNav from '../TopNav.vue'
 
-describe("TopNav", () => {
-  it("should render", () => {
-    expect(TopNav).toBeTruthy();
-  });
-});
+describe('TopNav', () => {
+  it('should render', () => {
+    expect(TopNav).toBeTruthy()
+  })
+})
