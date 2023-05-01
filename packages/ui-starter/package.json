@@ -20,8 +20,8 @@
   "scripts": {
     "dev": "vite build --config vite-library.config.ts",
     "preview": "vite preview",
-    "test:unit": "vitest run --environment jsdom --root src/",
-    "test:unit:dev": "vitest --environment jsdom --root src/",
+    "test:unit": "vitest run --environment jsdom",
+    "test:unit:dev": "vitest --environment jsdom",
     "test:component": "cypress run --component",
     "test:component:dev": "cypress open --component",
     "build": "run-p type-check build-only",
