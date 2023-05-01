@@ -1,28 +1,30 @@
 <script setup lang="ts">
-import type { OpenAPIConfig } from "@razorsim/api-gateway";
-import { AppClient } from "@razorsim/api-gateway";
-import { UiButton } from "@razorsim/ui-starter";
-import { useQuery } from "@tanstack/vue-query";
+import type { OpenAPIConfig } from '@razorsim/api-gateway'
+import { AppClient } from '@razorsim/api-gateway'
+import { UiButton } from '@razorsim/ui-starter'
+import { useQuery } from '@tanstack/vue-query'
 
 const configuration: OpenAPIConfig = {
-  BASE: "http://localhost:3000",
-  VERSION: "v1",
+  BASE: 'http://localhost:3000',
+  VERSION: 'v1',
   WITH_CREDENTIALS: false,
-  CREDENTIALS: "include",
-};
-const AppApiClient = new AppClient(configuration);
+  CREDENTIALS: 'include',
+}
+const AppApiClient = new AppClient(configuration)
 
-const userId = ref(1);
-const autoFetchEnabled = ref(true);
+const userId = ref(1)
+const autoFetchEnabled = ref(true)
 const { isInitialLoading, isError, error, data, refetch } = useQuery({
-  queryKey: ["user", userId],
+  queryKey: ['user', userId],
   queryFn: () => AppApiClient.user.getUsersInfo(userId.value),
   enabled: autoFetchEnabled,
-});
+})
 </script>
 
 <template>
-  <h1 class="text-5xl font-bold">Do some dev test here</h1>
+  <h1 class="text-5xl font-bold">
+    Do some dev test here
+  </h1>
   <div class="prose text-xl dark:prose-light">
     <p>
       In this page, we are consuming the
@@ -62,7 +64,7 @@ const { isInitialLoading, isError, error, data, refetch } = useQuery({
         type="number"
         name="userId"
         class="mt-1 shadow-sm focus:(outline-none ring-2 ring-indigo-500 ) block sm:text-sm border-gray-300 rounded-md px-3 py-1 bg-gray-200 text-gray-900 dark:(bg-gray-700 text-light-100)"
-      />
+      >
     </div>
     <div class="mt-4">
       <label
@@ -75,9 +77,11 @@ const { isInitialLoading, isError, error, data, refetch } = useQuery({
         type="checkbox"
         name="autoFetchEnabled"
         class="mt-1 shadow-sm focus:(outline-none ring-2 ring-indigo-500 ) block sm:text-sm border-gray-300 rounded-md px-3 py-1 bg-gray-200 text-gray-900 dark:(bg-gray-700 text-light-100)"
-      />
+      >
     </div>
-    <UiButton class="mt-5" color="primary" @click="refetch()">Refetch</UiButton>
+    <UiButton class="mt-5" color="primary" @click="refetch()">
+      Refetch
+    </UiButton>
   </div>
   <div class="mt-10 border rounded-xl p-5 prose dark:prose-light">
     <p>Query for user/info/{{ userId }}</p>

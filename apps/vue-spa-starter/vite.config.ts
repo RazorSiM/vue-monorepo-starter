@@ -1,11 +1,11 @@
-import { fileURLToPath, URL } from "node:url";
-import Unocss from "unocss/vite";
-import AutoImport from "unplugin-auto-import/vite";
-import Components from "unplugin-vue-components/vite";
-import { defineConfig, searchForWorkspaceRoot } from "vite";
+import { URL, fileURLToPath } from 'node:url'
+import Unocss from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { defineConfig, searchForWorkspaceRoot } from 'vite'
 
-import Vue from "@vitejs/plugin-vue";
-import vueJsx from "@vitejs/plugin-vue-jsx";
+import Vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -24,7 +24,7 @@ export default defineConfig({
         /\.vue\?vue/, // .vue
         /\.md$/, // .md
       ],
-      imports: ["vue", "vue-router", "@vueuse/core"],
+      imports: ['vue', 'vue-router', '@vueuse/core'],
       dts: true,
       eslintrc: {
         enabled: true,
@@ -34,8 +34,8 @@ export default defineConfig({
       dts: true,
       types: [
         {
-          from: "vue-router",
-          names: ["RouterLink", "RouterView"],
+          from: 'vue-router',
+          names: ['RouterLink', 'RouterView'],
         },
       ],
     }),
@@ -43,7 +43,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-});
+})

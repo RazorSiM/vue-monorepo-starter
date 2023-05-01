@@ -32,7 +32,6 @@
       "antfu.iconify",
       "ms-vsliveshare.vsliveshare",
       "csstools.postcss",
-      "esbenp.prettier-vscode",
       "antfu.unocss",
       "ZixuanChen.vitest-explorer",
       "Vue.volar"
@@ -44,9 +43,8 @@
     "i18n-ally.keystyle": "nested",
     "i18n-ally.localesPaths": "locales",
     "i18n-ally.sortKeys": true,
-    "prettier.enable": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "prettier.enable": false,
+    "editor.formatOnSave": false,
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },

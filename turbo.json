@@ -1,49 +1,106 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "prettier:check": {
-      "dependsOn": ["prettier:write"]
-    },
-    "prettier:write": {},
     "lint:check": {
-      "dependsOn": ["^build", "prettier:write", "lint:fix"],
-      "inputs": ["src/**/*.{ts,js,vue}", "tests/**/*.ts", "tests/**/*.js"]
-    },
-    "lint:fix": {},
-    "build-only": {
-      "dependsOn": ["^build-only"],
-      "outputs": ["dist/**"]
-    },
-    "start-and-generate": {},
-    "build": {
-      "dependsOn": ["start-and-generate", "^build"],
-      "outputs": ["dist/**"]
-    },
-    "//#docs:build": {},
-    "storybook:build": {
-      "dependsOn": ["build"],
-      "inputs": [
-        "src/**/*.stories.ts",
-        "src/**/*.mdx",
-        "stories/**/*.ts",
-        "stories/**/*.mdx"
-      ]
-    },
-    "test:unit": {
-      "dependsOn": ["^build"],
-      "inputs": ["src/**/*/.test.ts", "tests/**/*.ts", "tests/**/*.js"]
-    },
-    "test:component": {
-      "dependsOn": ["^build"],
+      "dependsOn": [
+        "^build"
+      ],
       "inputs": [
         "src/**/*.ts",
+        "src/**/*.js",
         "src/**/*.vue",
         "tests/**/*.ts",
         "tests/**/*.js"
       ]
     },
+    "lint:fix": {
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.js"
+      ]
+    },
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.vue"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "type-check": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "//#docs:build": {
+      "outputs": [
+        ".vitepress/dist/**"
+      ]
+    },
+    "storybook:build": {
+      "dependsOn": [
+        "^build",
+        "build"
+      ],
+      "inputs": [
+        "src/**/*.stories.ts",
+        "src/**/*.mdx",
+        "stories/**/*.ts",
+        "stories/**/*.mdx",
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.vue"
+      ],
+      "outputs": [
+        "storybook-static/**"
+      ]
+    },
+    "test:unit": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.vue",
+        "src/**/*.test.ts",
+        "src/**/*.test.js",
+        "tests/**/*.ts",
+        "tests/**/*.js"
+      ]
+    },
+    "test:component": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.vue",
+        "src/**/*.cy.ts",
+        "src/**/*.cy.js"
+      ]
+    },
     "test:e2e": {
-      "dependsOn": ["^build", "build"]
+      "dependsOn": [
+        "^build",
+        "build"
+      ],
+      "inputs": [
+        "src/**/*.ts",
+        "src/**/*.js",
+        "src/**/*.vue",
+        "e2e/**/*.ts",
+        "e2e/**/*.js"
+      ]
     },
     "dev": {
       "cache": false,

@@ -1,4 +1,5 @@
-import config from "@razorsim/unocss";
+import config from '@razorsim/unocss'
+
 export default {
   ...config,
-};
+}
