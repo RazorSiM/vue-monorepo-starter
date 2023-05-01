@@ -7,7 +7,7 @@ import type { ZodType } from 'zod'
 export interface BaseInputProps {
   modelValue: string | number
   name: string
-  type: string | number
+  type: 'text' | 'number'
   placeholder: string
   fieldSchema?: ZodType
   disabled?: boolean
