@@ -6,20 +6,14 @@
         "^build"
       ],
       "inputs": [
-        "src/**/*.ts",
-        "src/**/*.js",
-        "src/**/*.vue",
-        "tests/**/*.ts",
-        "tests/**/*.js"
+        "**/*.ts",
+        "**/*.js"
       ]
     },
     "lint:fix": {
       "inputs": [
-        "src/**/*.ts",
-        "src/**/*.js",
-        "src/**/*.vue",
-        "tests/**/*.ts",
-        "tests/**/*.js"
+        "**/*.ts",
+        "**/*.js"
       ]
     },
     "build": {
@@ -27,6 +21,12 @@
         "^build"
       ],
       "inputs": [
+        "tsconfig.*.json",
+        "tsconfig.json",
+        "vite-library.config.ts",
+        "vite.config.ts",
+        "unocss.config.ts",
+        "locales/**/*",
         "src/**/*.ts",
         "src/**/*.js",
         "src/**/*.vue"
@@ -51,6 +51,8 @@
         "build"
       ],
       "inputs": [
+        "unocss.config.ts",
+        "vite.config.ts",
         "src/**/*.stories.ts",
         "src/**/*.mdx",
         "stories/**/*.ts",
