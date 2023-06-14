@@ -27,7 +27,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@razorsim/eslint-config-vue": "workspace:*",
-    "@razorsim/unocss": "workspace:*"
+    "@razorsim/eslint-config-vue": "workspace:*"
   }
 }

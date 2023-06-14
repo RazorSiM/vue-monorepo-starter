@@ -37,7 +37,6 @@
       "*.css": "postcss"
     },
     "unocss.root": [
-      "packages/unocss",
       "packages/ui-starter",
       "apps/vue-spa-starter"
     ],

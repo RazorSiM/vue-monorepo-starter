@@ -1,7 +1,7 @@
 {
   "name": "frontend-monorepo",
   "version": "0.0.0",
-  "description": "An integrated frontend monorepo with Vite, Vitepress, Vitest, Turbo, Lefthook, Prettier, ESLint, Cypress, and more.",
+  "description": "An integrated frontend monorepo with Vite, Vitepress, Vitest, Turbo, Lefthook, ESLint, Cypress, and more.",
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",

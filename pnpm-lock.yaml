@@ -201,22 +201,10 @@ importers:
       '@razorsim/eslint-config-vue':
         specifier: workspace:*
         version: link:../../packages/eslint-config-vue
-      '@razorsim/unocss':
-        specifier: workspace:*
-        version: link:../../packages/unocss
 
   packages/eslint-config-vue: {}
 
   packages/ui-starter:
-    devDependencies:
-      '@razorsim/eslint-config-vue':
-        specifier: workspace:*
-        version: link:../eslint-config-vue
-      '@razorsim/unocss':
-        specifier: workspace:*
-        version: link:../unocss
-
-  packages/unocss:
     devDependencies:
       '@razorsim/eslint-config-vue':
         specifier: workspace:*
@@ -227,9 +215,6 @@ importers:
       '@razorsim/eslint-config-vue':
         specifier: workspace:*
         version: link:../eslint-config-vue
-      '@razorsim/unocss':
-        specifier: workspace:*
-        version: link:../unocss
 
 packages:
 

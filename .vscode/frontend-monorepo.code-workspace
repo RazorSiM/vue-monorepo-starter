@@ -9,10 +9,6 @@
       "path": "../packages/eslint-config-vue"
     },
     {
-      "name": "UnoCSS",
-      "path": "../packages/unocss"
-    },
-    {
       "name": "UI Starter",
       "path": "../packages/ui-starter"
     },
@@ -52,7 +48,6 @@
       "*.css": "postcss"
     },
     "unocss.root": [
-      "packages/unocss",
       "packages/ui-starter",
       "apps/vue-spa-starter"
     ],
