@@ -5,14 +5,14 @@ const toggleDark = useToggle(isDark)
 
 <template>
   <div
-    class="min-h-screen bg-gray-50 w-full transition text-gray-900 duration-100 dark:(bg-gray-900 text-gray-50) font-sans"
+    class="min-h-screen w-full bg-gray-50 font-sans text-gray-900 transition duration-100 dark:(bg-gray-900 text-gray-50)"
   >
     <header
-      class="flex gap-5 p-[30px] items-center justify-between container mx-auto"
+      class="mx-auto flex items-center justify-between gap-5 p-[30px] container"
     >
       <TopNav />
       <button
-        class="rounded-full font-bold hover:(bg-yellow-200) leading-none py-2 px-2 transition focus:outline-none hover:dark:(bg-indigo-900)"
+        class="rounded-full px-2 py-2 font-bold leading-none transition hover:(bg-yellow-200) focus:outline-none hover:dark:(bg-indigo-900)"
         @click="toggleDark()"
       >
         <div v-if="!isDark" class="i-fluent-emoji-new-moon h-10 w-10" />
@@ -20,7 +20,7 @@ const toggleDark = useToggle(isDark)
       </button>
     </header>
 
-    <div class="container mx-auto p-10">
+    <div class="mx-auto p-10 container">
       <slot />
     </div>
   </div>

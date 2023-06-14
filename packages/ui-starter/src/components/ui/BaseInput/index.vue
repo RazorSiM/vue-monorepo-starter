@@ -71,7 +71,7 @@ export const successClasses
       <input
         :id="name"
         data-testid="input"
-        class="transition bg-slate-200 outline-none rounded py-3 px-2 shadow-sm ring-1 ring-zinc hover:(ring-black) focus:(outline-none ring-green-500 ring-2 ) active:(outline-none ring-blue-500!) disabled:(opacity-50 cursor-not-allowed) read-only:(opacity-50 cursor-not-allowed)"
+        class="rounded bg-slate-200 px-2 py-3 shadow-sm outline-none ring-1 ring-zinc transition disabled:(cursor-not-allowed opacity-50) read-only:(cursor-not-allowed opacity-50) active:(outline-none ring-blue-500!) focus:(outline-none ring-2 ring-green-500) hover:(ring-black)"
         :class="{
           [errorClasses]: !!errorMessage,
           [successClasses]: meta.valid,
@@ -83,7 +83,7 @@ export const successClasses
         @blur="handleBlur"
       >
     </div>
-    <p v-if="errorMessage" class="text-red-600 text-sm absolute">
+    <p v-if="errorMessage" class="absolute text-sm text-red-600">
       {{ errorMessage }}
     </p>
   </div>

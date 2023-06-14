@@ -81,12 +81,12 @@ const badges: Badge[] = [
       :key="badge.title"
       :href="badge.url"
       target="_blank"
-      class="hover:(scale-105) transition"
+      class="transition hover:(scale-105)"
     >
       <img :src="badge.img" :alt="badge.title" class="rounded">
     </a>
   </div>
-  <div class="prose text-xl dark:prose-light">
+  <div class="text-xl prose dark:prose-light">
     <h1>Vite Starter for Vue</h1>
     <h2>Batteries included!</h2>
 
@@ -316,7 +316,7 @@ pnpm run test:e2e
     </h3>
     <p><code>pnpm run lint</code></p>
   </div>
-  <hr class="border mb-10">
+  <hr class="mb-10 border">
   <div class="mb-10">
     <h3 class="mb-5 text-2xl">
       Example of how you can use utilities imported from the monorepo libraries:
@@ -325,7 +325,7 @@ pnpm run test:e2e
       <p>Language:</p>
       <select
         v-model="language"
-        class="bg-light-800 dark:bg-gray-800 px-3 py-1 rounded-lg"
+        class="rounded-lg bg-light-800 px-3 py-1 dark:bg-gray-800"
       >
         <option v-for="lang in preferredLanguages" :key="lang">
           {{ lang }}
@@ -337,7 +337,7 @@ pnpm run test:e2e
       <input
         v-model.number="number"
         type="number"
-        class="bg-light-800 dark:bg-gray-800 px-3 py-1 rounded-lg"
+        class="rounded-lg bg-light-800 px-3 py-1 dark:bg-gray-800"
       >
     </label>
     <p>Formatted Number: {{ formattedNumber }}</p>

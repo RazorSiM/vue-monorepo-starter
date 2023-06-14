@@ -53,7 +53,7 @@ export const disabledClasses = 'opacity-50 cursor-not-allowed!'
 
 <template>
   <button
-    class="transition rounded active:(outline-none ring-2 ring-green-500)"
+    class="rounded transition active:(outline-none ring-2 ring-green-500)"
     :class="[
       colorToClasses.get(props.color),
       sizeToClasses.get(props.size),
@@ -64,7 +64,7 @@ export const disabledClasses = 'opacity-50 cursor-not-allowed!'
     :type="props.type"
     :disabled="props.disabled"
   >
-    <div class="flex gap-2 items-center justify-center">
+    <div class="flex items-center justify-center gap-2">
       <div v-if="props.loading" class="i-eos-icons:bubble-loading" />
       <slot name="icon" />
       <slot>Button</slot>

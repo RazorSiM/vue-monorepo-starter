@@ -4,7 +4,7 @@ import UiButton from './components/ui/Button/index.vue'
 
 <template>
   <div
-    class="w-full dark:bg-dark-900 bg-light-300 h-screen flex items-center justify-center flex-col gap-5"
+    class="h-screen w-full flex flex-col items-center justify-center gap-5 bg-light-300 dark:bg-dark-900"
   >
     <div class="text-6xl font-bold">
       Test
